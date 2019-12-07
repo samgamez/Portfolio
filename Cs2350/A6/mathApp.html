@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Math Application</title>
+
+    <!-- 
+    Honor Code: I acknowledge that this code represents my own work: 
+    SG 2/14/2018
+    -->
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="author" content="Sam Gamez" />
+    <script>
+        var result;
+        var questionNumber = 0;
+
+        /**
+         * Greets the user.
+         */
+        function namePrompt() {
+            var userName = prompt("What is your name?");
+            console.log("Welcome to your very first JavaScript application, " + userName + ".");
+        }
+
+        /**
+         * Generates an addition question with two random integers and prompts the user for an
+         * answer.
+         */
+        function generateAddition() {
+            questionNumber++;
+
+            var x = Math.floor(Math.random() * 100);
+            var y = Math.floor(Math.random() * 100);
+            result = x + y;
+
+            userAnswer = prompt("Question " + questionNumber + ": " + x + " + " + y + " = ");
+
+            if (Number(userAnswer) === result) {
+                console.log(questionNumber + ". Correct");
+            }
+            else {
+                console.log(questionNumber + ". Incorrect");
+            }
+        }
+
+        /**
+         * Generates a subtraction question with two random integers and prompts the user for an
+         * answer.
+         */
+        function generateSubtraction() {
+            questionNumber++;
+
+            var x = Math.floor(Math.random() * 100);
+            var y = Math.floor(Math.random() * 100);
+            result = x - y;
+
+            userAnswer = prompt("Question " + questionNumber + ": " + x + " - " + y + " = ");
+
+            if (Number(userAnswer) === result) {
+                console.log(questionNumber + ". Correct");
+            }
+            else {
+                console.log(questionNumber + ". Incorrect");
+            }
+        }
+
+        /**
+         * Generates a multiplication question with two random integers and prompts the user for an
+         * answer.
+         */
+        function generateMultiplication() {
+            questionNumber++;
+
+            var x = Math.floor(Math.random() * 100);
+            var y = Math.floor(Math.random() * 10);
+            result = x * y;
+
+            userAnswer = prompt("Question " + questionNumber + ": " + x + " * " + y + " = ");
+
+            if (Number(userAnswer) === result) {
+                console.log(questionNumber + ". Correct");
+            }
+            else {
+                console.log(questionNumber + ". Incorrect");
+            }
+        }
+
+        /**
+         * Generates a division question with two random integers and prompts the user for an
+         * answer.
+         */
+        function generateDivision() {
+            questionNumber++;
+
+            var x = Math.floor(Math.random() * 100);
+            var y = Math.floor(Math.random() * 10);
+
+            // If the division result will have a decimal get 2 more random numbers.
+            while (x % y !== 0 || y === 0) {
+                x = Math.floor(Math.random() * 100);
+                y = Math.floor(Math.random() * 10);
+            }
+            result = x / y;
+
+
+            userAnswer = prompt("Question " + questionNumber + ": " + x + " / " + y + " = ");
+
+            if (Number(userAnswer) === result) {
+                console.log(questionNumber + ". Correct");
+            }
+            else {
+                console.log(questionNumber + ". Incorrect");
+            }
+        }
+    </script>
+</head>
+
+<body onload="namePrompt()">
+    <button type="button" onclick="generateAddition()">+</button>
+    <button type="button" onclick="generateSubtraction()">-</button>
+    <button type="button" onclick="generateMultiplication()">*</button>
+    <button type="button" onclick="generateDivision()">/</button>
+</body>
+
+</html>

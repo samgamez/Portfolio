@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Honor Code: I acknowledge that this code represents my own work: Sam Gamez -->
+    <meta charset="utf-8" />
+    <meta name="description" content="Rock, Paper, Scissors game with a twist." />
+    <meta name="keywords" content="Rock, Paper, Scissors, twist, rps, rps game," />
+    <meta name="author" content="Sam Gamez" />
+    <title>Rock, Paper, Scissors</title>
+
+    <!-- Load bootstrap -->
+    <link type="text/css" rel="stylesheet" href="../lib/bootstrap-4.0.0/dist/css/bootstrap.min.css">
+    <link type="text/css" rel="stylesheet" href="rpsStyles/site.css">
+
+    <!-- Load bootstrap JavaScript dependencies -->
+    <script src="../lib/jquery/jquery-3.3.1.js"></script>
+    <script src="../lib/bootstrap-4.0.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Load fontawesome icons because Bootstrap v4 dropped support for glyphicons. -->
+    <script src="../lib/fontawesome/fontawesome-all.min.js"></script>
+
+    <!-- <script src="../scripts/shared.js"></script> -->
+</head>
+
+<body>
+    <div class="container">
+        <header class="row">
+            <h1 class="col text-center">Rock, Paper, Scissors <small>with a twist!</small></h1>
+        </header>
+        
+        <div class="row">
+            <div class="col">
+                <h2><u class="playerLabel">Choose a game</u></h2>
+            </div>
+        </div>
+        <section class="row">
+            <div class="col">
+                <ul class="fa-ul mt-2">
+                    <li class="h4"><a href="classicRps.html"><i class="fa-li fa fa-hand-scissors" data-fa-transform="flip-h"></i>Classic Rock, Paper, Scissors</a></li>
+                    <li class="h4"><a href="reverseTimedRPS.html"><i class="fa-li fa fa-hand-scissors" data-fa-transform="flip-h"></i>Reverse Rock, Paper, Scissors Time attack</a></li>
+                    <li class="h4"><a href="sequentialRPS.html"><i class="fa-li fa fa-hand-scissors" data-fa-transform="flip-h"></i>Sequential Rock, Paper, Scissors Time attack</a></li>
+                    <li class="h4"><a href="wagerRPS.html"><i class="fa-li fa fa-hand-scissors" data-fa-transform="flip-h"></i>Rock, Paper, Scissors Credit Wager</a></li>
+                </ul>
+            </div>
+        </section>
+    </div>
+</body>
+
+</html>

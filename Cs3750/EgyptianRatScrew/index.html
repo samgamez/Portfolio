@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Egyptian Rat Screw</title>
+        
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+            integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+            crossorigin="anonymous"></script>
+        <script src="index.js"></script>
+		<link rel="stylesheet" type="text/css" href="cards.css">
+        <style>
+         #game-section, #error-section, #wait-section { 
+            display: none;
+        }
+        </style>
+    </head>
+    <body>
+        <h1>Egyptian Rat Screw</h1>
+        <!-- <div class="msg-box"></div> -->
+        <section id="start-section">
+            <form>
+                <div>
+                    <label>Name</label>
+                    <input type="text" id="name-in" />
+                </div>
+                <div>
+                    <label>Game Id</label>
+                    <input type="number" id="game-id-in" />
+                </div>
+                <div>
+                    <button id="start-btn" type="button">Start</button>
+                </div>
+            </form>
+        </section>
+        <section id="error-section"></section>
+        <section id="wait-section">
+            <div>Game ID: <span class="game-id"></span></div>
+            Waiting for other players...
+        </section>
+        <section id="game-section">
+                <div>Game ID: <span class="game-id"></span></div>
+                <div>Player Turn: <span id="player-turn-name"></span></div>
+                <div id="game-box">
+                    <div id="upper-deck">
+                        <div class="card reverse"></div>
+                        <div id="opponent-name"></div>
+                        <div id="opponent-card-count"></div>
+
+			<!-- <div id="opponent_turn" class="turn">Waiting for Move</div> -->
+
+			<!-- <div id="opponent_turn">Waiting for Move</div> -->
+
+                    </div>
+                    <br />
+                    <div id="discard-pile">
+                        <div class=" card empty"></div>
+                        <!-- <div class="discarded card C_A"></div>
+                        <div class="discarded card C_2"></div>
+                        <div class="discarded card C_3"></div>
+                        <div class="discarded card C_4"></div>
+                        <div class="discarded card C_5"></div> -->
+                    </div>
+                    <br />
+                    <div id="lower-deck">
+                        <div class="card reverse"></div>
+                        <div id="current-player-name"></div>
+                        <div id="current-player-card-count"></div>
+
+			<!-- <div id="player-turn" class="turn">Make your move</div> -->
+
+			<!-- <div id="player-turn">Make your move</div> -->
+
+                    </div>
+		    <button id="slap">Slap</button><button id="draw">Draw</button>
+                </div>
+        </section>
+		<section id="round-win-section">
+			<h1 class="round-winner"></h1>
+		</section>
+		<section id="game-win-section">
+			<h1 class="game-winner"></h1>
+		</section>
+    </body>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="author" content="Sam Gamez">
+    <title>Sequential Rock, Paper, Scissors</title>
+
+    <!-- Load bootstrap -->
+    <link type="text/css" rel="stylesheet" href="../lib/bootstrap-4.0.0/dist/css/bootstrap.min.css">
+    <link type="text/css" rel="stylesheet" href="rpsStyles/site.css">
+
+    <!-- Load bootstrap JavaScript dependencies -->
+    <script src="../lib/jquery/jquery-3.3.1.js"></script>
+    <script src="../lib/bootstrap-4.0.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Load fontawesome icons because Bootstrap v4 dropped support for glyphicons. -->
+    <script src="../lib/fontawesome/fontawesome-all.min.js"></script>
+
+    <script src="scripts/shared.js"></script>
+    <script src="scripts/sequentialRPS.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <header class="row">
+            <div class="col-3">
+                <buton id="optionsBtn" type="buton" class="btn btn-primary float-left mt-2">
+                    <i class="fa fa-bars"></i>
+                    Options
+                </buton>
+            </div>
+            <div class="col-6 text-center">
+                <h1>Sequential Rock, Paper, Scissors Time Attack</h1>
+            </div>
+        </header>
+        <section class="row">
+            <div class="col">
+                <div class="row">
+                    <div class="col text-center h4 playerLabel mb-0 text-underline">
+                        <u id="turnIndicator">Computer's Turn</u>
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <div id="imgDiv" class="col text-center">
+                        <img src="resources/winning-scissors.jpg" class="pt-1 flip" alt="Scissors" width="200" height="200" style="display: none">
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col text-center">
+                        <strong id="gameStatus" class="h4"></strong>
+                    </div>
+                </div>
+                <div class="row mb-5">
+                    <div class="col col-md-2 offset-md-3">
+                        <button type="button" id="rockBtn" class="btn btn-primary btn-block playBtn">Rock</button>
+                    </div>
+                    <div class="col col-md-2">
+                        <button type="button" id="paperBtn" class="btn btn-primary btn-block playBtn">Paper</button>
+                    </div>
+                    <div class="col col-md-2">
+                        <button type="button" id="scissorsBtn" class="btn btn-primary btn-block playBtn">Scissors</button>
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <div id="timerDiv" class="col text-center h4 playerLabel">
+                        <u class="d-block">Timer</u>
+                        <span id="time">
+                            <span id="timerMinutes"></span>:
+                            <span id="timerSeconds"></span>
+                        </span>
+                    </div>
+                    <div class="col text-center h4 playerLabel">
+                        <u class="d-block">Rounds</u>
+                        <span id="roundCount"></span> /
+                        <span id="totalRounds"></span>
+                    </div>
+                    <div class="col text-center h4 playerLabel">
+                        <u class="d-block">Best time</u>
+                        <span id="bestTime">--</span>
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col-5 offset-3">
+                        <strong id="endGameStatus" class="h4"></strong>
+                    </div>
+                    <div class="col-1">
+                        <button id="playAgainBtn" class="btn btn-primary">Play again</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+
+</html>

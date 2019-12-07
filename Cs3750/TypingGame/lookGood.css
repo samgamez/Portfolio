@@ -1,0 +1,37 @@
+/*
+Lime Creme: #E7F7D4
+Green: #7FBD32
+Light Red: #EA202C
+Dark Red: #B8141F
+DARK: #34090C
+*/
+
+
+* {
+	margin: auto;
+	padding: 5px;
+	text-align: center;
+	color: green;
+	background-color: #E7F7D4;
+}
+
+
+div {
+	color:  #EA202C;
+	background-color: #E7F7D4;
+}
+
+table, th, td {
+	border: 1px solid #34090C;
+	background-color: #7FBD32;
+	color: #B8141F;
+	width: 500px;}
+
+#big-text {
+	color: #EA202C;
+	font-size: 40px;
+}
+
+html {
+	background-color: #B8141F;
+}

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="author" content="Sam Gamez">
+    <title>Rock, Paper, Scissors Credit Wager</title>
+
+    <!-- Load bootstrap -->
+    <link type="text/css" rel="stylesheet" href="../lib/bootstrap-4.0.0/dist/css/bootstrap.min.css">
+    <link type="text/css" rel="stylesheet" href="rpsStyles/site.css">
+
+    <!-- Load bootstrap JavaScript dependencies -->
+    <script src="../lib/jquery/jquery-3.3.1.js"></script>
+    <script src="../lib/bootstrap-4.0.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Load fontawesome icons because Bootstrap v4 dropped support for glyphicons. -->
+    <script src="../lib/fontawesome/fontawesome-all.min.js"></script>
+
+    <script src="scripts/shared.js"></script>
+    <script src="scripts/wagerRPS.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <header class="row">
+            <div class="col-3">
+                <buton id="optionsBtn" type="buton" class="btn btn-primary float-left mt-2">
+                    <i class="fa fa-bars"></i>
+                    Options
+                </buton>
+            </div>
+            <div class="col-6 text-center">
+                <h1>Rock, Paper, Scissors Credit Wager</h1>
+            </div>
+        </header>
+        <section class="row">
+            <div class="col">
+                <div class="row">
+                    <div class="col-4 offset-4">
+                        <label class="form-control-label playerLabel h4" for="creditBet"><u>Bet:</u></label>
+                        <!-- To add invalid styles add is-invalid class to the input. -->
+                        <input type="number" id="creditBet" class="form-control"> 
+                        <div id="creditBetInvalidMsg" class="invalid-feedback">You must place a bet!</div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col text-center h4 playerLabel mb-0">
+                        <u>Your throw</u>
+                    </div>
+                    <div class="col text-center h4 playerLabel mb-0">
+                        <u>Computer throw</u>
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <div id="playerImgDiv" class="col text-center">
+                        <img src="resources/winning-scissors.jpg" class="img-fluid pt-1" alt="Scissors" width="200" height="200">
+                    </div>
+                    <div id="computerImgDiv" class="col text-center">
+                        <img src="resources/winning-scissors.jpg" class="img-fluid pt-1 flip" alt="Scissors" width="200" height="200">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col text-center">
+                        <strong id="gameStatus" class="h4"></strong>
+                    </div>
+                </div>
+                <div class="row mb-5">
+                    <div class="col-2">
+                        <button type="button" id="rockBtn" class="btn btn-primary btn-block playBtn">Rock</button>
+                    </div>
+                    <div class="col-2">
+                        <button type="button" id="paperBtn" class="btn btn-primary btn-block playBtn">Paper</button>
+                    </div>
+                    <div class="col-2">
+                        <button type="button" id="scissorsBtn" class="btn btn-primary btn-block playBtn">Scissors</button>
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col text-center h4 playerLabel">
+                        <u class="d-block">Credits</u>
+                        <span id="creditCount"></span>
+                    </div>
+                    <div class="col text-center h4 playerLabel">
+                        <u class="d-block">Round</u>
+                        <span id="currentRound"></span> /
+                        <span id="totalRounds"></span>
+                    </div>
+                    <div class="col text-center h4 playerLabel">
+                        <u class="d-block">High Score</u>
+                        <span id="highScore"></span>
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col-3 offset-4">
+                        <strong id="endGameStatus" class="h4"></strong>
+                    </div>
+                    <div class="col-1">
+                        <button id="playAgainBtn" class="btn btn-primary">Play again</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+
+</html>

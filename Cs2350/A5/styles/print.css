@@ -1,0 +1,26 @@
+/*
+  
+   Wildcat Computer Science Style Sheet for printer
+   Author: Sam Gamez
+   Date:   2/14/2018
+
+   Filename:         print.css
+   Supporting Files: none
+
+*/
+
+/* Print Rules */
+@media print {
+    #nav, 
+    #callout,
+    a#html-validator-logo,
+    a#css-validator-logo {
+        display: none;
+    }
+}
+
+
+
+
+
+

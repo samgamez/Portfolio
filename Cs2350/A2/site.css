@@ -1,0 +1,25 @@
+body {
+    background-color: azure;
+    margin-left: 5%;
+    margin-right: 5%;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.image-group {
+    display: inline-block;
+    margin-right: 2%;
+    margin-bottom: 2%;
+    border: blue solid 1px;
+    background-color: rgb(0, 0, 50);
+    color: white;
+}
+
+.quarter-width {
+    width: 25%;
+}
+.quarter-width img {
+    width: 100%;
+}
+
+.image-group p {
+    margin: 0% 2% 0% 2%;
+}

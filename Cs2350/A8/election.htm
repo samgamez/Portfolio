@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!--
+
+   A7: Congressional Race Results
+   Author: Sam Gamez
+   Plagarism Acknowledgment:  SG 3/19/2018
+
+-->
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="author" content="Sam Gamez">
+<meta name="keywords" content="vote, election, congressional race">
+<title>Congressional Races</title>
+<link href="results.css" rel="stylesheet" type="text/css" />
+<script src="votes.js"></script>
+<script>
+    // Calculate the sum of all values within the array votes.
+    function totalVotes(votes) {
+        var total = 0;
+        for (vote of votes){
+            total += vote;
+        }
+        return total;
+    }
+
+    // Calculate a percentage rounded to the nearest integer.
+    function calcPercentage(item, sum){
+        return Math.round((item / sum) * 100);
+    }
+
+    // Write table cells that make up each horizontal bar in the election results.
+    function createBar(partyType, percentage){
+        var barText;
+        // Create the cell's template according to the party's type.
+        switch (partyType){
+            case "D": 
+                barText = "<td class='dem'> </td>"
+                break;
+            case "R": 
+                barText = "<td class='rep'> </td>"
+                break;
+            case "I": 
+                barText = "<td class='ind'> </td>"
+                break;
+            case "G":
+                barText = "<td class='green'> </td>"
+                break;
+            case "L":
+                barText = "<td class='lib'> </td>"
+                break;
+        }
+
+        for (var cellCount = 1; cellCount < percentage; cellCount++){
+            document.writeln(barText);
+        }
+    }
+
+    // Show the results of a specified race.
+    function showResults(race, name, party, votes){
+        var totalV = totalVotes(votes);
+        // Create the header.
+        document.writeln(
+            "<h2>" + race + `</h2>
+            <table>
+                <tr>
+                    <th>Candidate</th>
+                    <th class='num'>Votes</th>
+                    <th class='num'>%</th>
+                </tr>`);
+        // Create the bar graph results.
+        for (var idx = 0; idx < name.length; idx++){
+            document.writeln(
+                "<tr><td>" + name[idx] + "(" + party[idx] + `)</td>
+                    <td class='num'>` + votes[idx] + "</td>");
+            var percent = calcPercentage(votes[idx], totalV);
+
+            document.writeln("<td class='num'>(" + percent + "%)</td>");
+
+            createBar(party[idx], percent);
+            document.writeln("</tr>");
+        }
+
+        document.writeln("</table>");
+    }
+</script>
+</head>
+
+<body>
+
+   <div id="intro">
+      <p><img src="logo.jpg" alt="Election Day Results" /></p>
+      <a href="#">Election Home Page</a>
+      <a href="#">President</a>
+      <a href="#">Senate Races</a>
+      <a href="#">Congressional Races</a>
+      <a href="#">State Senate</a>
+      <a href="#">State House</a>
+      <a href="#">Local Races</a>
+      <a href="#">Judicial</a>
+      <a href="#">Referendums</a>
+   </div>
+
+   <div id="results">
+      <h1>Congressional Races</h1>
+      <script defer>
+          showResults(race[0], name1, party1, votes1);
+          showResults(race[1], name2, party2, votes2);
+          showResults(race[2], name3, party3, votes3);
+          showResults(race[3], name4, party4, votes4);
+          showResults(race[4], name5, party5, votes5);
+      </script>
+   </div>
+
+</body>
+</html>

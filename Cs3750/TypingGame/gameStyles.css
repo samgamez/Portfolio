@@ -1,0 +1,31 @@
+.wordGroup {
+    width: 15%;
+    display: inline-block;
+    margin-bottom: 30px;
+}
+
+.game {
+    display: none;
+}
+
+.lifebar {
+    padding: 5px 0px;
+
+}
+
+.word {
+    font-size: 2em;
+}
+
+.userGroup {
+    float: right;
+}
+
+.gameTimerGroup {
+    float: right;
+    font-size: 2em;
+}
+
+.word strong {
+    padding: 0;
+}

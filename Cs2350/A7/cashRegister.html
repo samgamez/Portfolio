@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Honor Code: I acknowledge that this code represents my own work: Sam Gamez -->
+    <meta charset="utf-8" />
+    <meta name="description" content="Total the contents of a shopping cart." />
+    <meta name="keywords" content="JavaScript, loops, numbers" />
+    <meta name="author" content="Sam Gamez" />
+    <title>JavaScript Basics</title>
+    <script>
+
+        (function () {
+            const tax = .06;
+            /**
+             * Displays the total cost of the cart's contents.
+             */
+            displayTotalCost = function () {
+
+                // Create the shopping cart. This can be modified to change the results.
+                var cartForParty = {
+                    banana: "1.25",
+                    handkerchief: ".99",
+                    Tshirt: "25.01",
+                    apple: "0.60",
+                    nalgene: "10.34",
+                    proteinShake: "22.36"
+                }
+
+                alert(cashRegister(cartForParty));
+            }
+
+            /**
+             * Computes the total cost and tax of a cart's contents.
+             * Returns a string to display the totals.
+             */
+            function cashRegister(cart){
+                var totalCost = 0;
+                var totalTax = 0;
+                for (var item in cart){
+                    var cost = Number(cart[item]);
+                    totalCost += cost;
+                    totalTax += cost * tax;
+                }
+                
+                // Rounds numbers to two decimals using the toFixed() function. 
+                return "Cart total is $" + totalCost.toFixed(2) + " plus $" + totalTax.toFixed(2) + " tax."
+
+            }
+        })();
+    </script>
+</head>
+
+<body onload="readyFunction()">
+    <input type="button" onclick="displayTotalCost()" value="Cash Register">
+
+    <nav>
+        <a href="jsTimeDemo.html">Part I</a>
+        <a href="jsLoopDemo.html">Part II</a>
+        <a href="cashRegister.html">Part III</a>
+    </nav>
+</body>
+
+</html>

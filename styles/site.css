@@ -1,0 +1,128 @@
+body {
+    background: #b8a9c9;
+}
+
+p {
+    font-size: 1.2rem;
+}
+
+/* #region Tabs */
+.nav-tabs,
+.nav-tabs .nav-link,
+.nav-tabs .nav-link.active {
+    border-color: #b8a9c9;
+}
+
+.nav-tabs .tab-content {
+    border: solid 1px #b8a9c9;
+}
+
+.nav-tabs .nav-link:not(.active):hover {
+    background: #b8a9c9;
+}
+/* #endregion */
+
+/* #region Accordion */
+.card {
+    border-color: #d6d4e0;
+}
+
+.card-header {
+    background: #5b9aa0;
+}
+
+.card-body {
+    background: #d6d4e0;
+}
+
+/* #endregion */
+
+/* Style the header and footer */
+header,
+footer{
+    min-height: 50px;
+    padding-top: .5rem;
+    padding-bottom: .5rem;
+}
+
+header,
+footer,
+.nav-tabs .nav-link.active {
+    background: #5b9aa0;
+}
+
+footer {
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+footer,
+footer a,
+footer a:hover,
+footer .btn-link,
+footer .btn-link:hover,
+.card-header .btn-link,
+.nav-tabs .nav-link.active  {
+    color:white
+}
+
+footer .btn {
+    font-size: inherit;
+    padding-top: 0;
+}
+
+footer .btn-link:hover,
+footer a:hover {
+    background: #5b99ff;
+}
+/* Manage headers */
+#page-header {
+    font-weight: bold;
+    border-bottom: solid 3px black;
+}
+
+.sub-header {
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+/* Set the main content background color and top padding.  */
+#content {
+    background: #d6d4e0;
+    padding-top: 5rem; /* The fixed header will cover some of the content without this extra padding. */
+}
+
+.btn.btn-primary {
+    border-color: #000000;
+    background-color: #622569;
+}
+
+.table-bordered tbody td,
+.table-bordered thead th{
+    border-color: #777777;
+    /* border-bottom-color: #b8a9c9; */
+}
+
+/* Active style */
+table.table-striped tr.active,
+table.table-striped tr.active:hover {
+    border: 1px solid #555555;
+    background: #b8a9c9;
+    color: #000000;
+}
+table.table-striped thead tr {
+    border: 1px solid #555555;
+    background: #5b9aa0;
+    color: #ffffff;
+}
+
+.modal-header .close {
+    opacity: 1;
+}
+
+@media (max-width: 576px) {
+    #content {
+        padding-top: 7.1rem;
+    }
+}
+

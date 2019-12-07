@@ -1,0 +1,173 @@
+	/*
+  
+   CSS3 Demo
+   Author: Sam Gamez
+   Date:   2/14/2018
+
+   Filename:         css3.css
+   Supporting Files: css3.html, ghosts.gif
+
+*/
+
+/* General Style */
+p {  
+    padding: 0px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    text-align: center;
+    width: 220px;
+    border-style: solid; 
+    border-color: #3100B1;
+    border-width: 8px;
+    background-color: #6666FF;
+} 
+
+/* CSS3 Styles */
+#para1 { 
+    border-radius: 25px;
+    box-shadow: inset 3px 3px 3px #660044, 2px 3px 2px #444444,
+                2px 2px 2px #0022FF, 
+                4px 4px 2px #0088FF,
+                6px 6px 2px #00FFFF, 
+                8px 8px 2px #00FF88, 
+                10px 10px 2px #00FF00, 
+                12px 12px 2px #88FF00, 
+                14px 14px 2px #FFFF00, 
+                16px 16px 2px #FF8800, 
+                18px 18px 2px #FF0000;
+} 
+
+#para2 { 
+    background-color: white; 
+    color:silver;   
+    font-size: 300%;
+    text-shadow: 4px 4px 1px #300000,        
+    4px 6px 1px #400000,        
+    4px 8px 1px #500000,        
+    4px 10px 1px #600000,        
+    4px 12px 1px #700000,        
+    4px 14px 1px #800000,        
+    4px 16px 1px #900000,        
+    4px 18px 1px #A00000,        
+    4px 20px 1px #B00000,        
+    4px 22px 1px #C00000,        
+    4px 24px 1px #D00000,        
+    4px 26px 1px #E00000,        
+    4px 28px 1px #F00000,        
+    4px 30px 1px #FA0000,        
+    4px 32px 1px #FB0000,        
+    4px 34px 1px #FC0000,        
+    4px 36px 1px #FD0000,        
+    4px 38px 1px #FE0000,        
+    4px 40px 2px #FF0000;
+} 
+
+#para3 { 
+    background-color: #333333;
+    color: white; 
+    font-size: 300%;
+    text-align:center;
+    text-shadow: 0 0 4px white, 
+                0 -5px 4px #FFFF33, 
+                2px -10px 6px #FFDD33,  
+                -2px -15px 11px #FF8800,  
+                2px -25px 18px #FF2200; 
+} 
+
+#para4 {
+    background: linear-gradient(70deg, blue, white); 
+}
+
+#para5 {
+    background: linear-gradient(to bottom, blue, white 80%, orange);
+}
+
+/* I experimented with colors here to understand how the percentages worked to apply to each color area. */
+#para6 {
+    background: linear-gradient(to right, red, orange 20%, yellow 40%, green 70%, blue);
+}
+
+#para7 { 
+    background: radial-gradient(ellipse farthest-corner, red, yellow 10%, #1E90FF 50%, white);
+} 
+
+#para8 { 
+    /* Changed the first color to red to be able to see the text. */
+    background: repeating-radial-gradient(red,white 10px);
+} 
+
+#ghosts { 
+    background-image: url("../images/ghosts.gif");
+    height: 300px;
+    width: 450px;
+    border-style: solid;
+    border-width: 5px;
+    border-color: #CCCCCC;
+
+} 
+
+#para9 {  
+    color: black; 
+    width: 275px; 
+    height: 125px; 
+    border-style: solid; 
+    border-color: orange; 
+    border-width: 5px; 
+    background-color: white; 
+    margin: 0;  
+    margin-top: 30px; 
+    padding: 10px; 
+    opacity: .5;
+} 
+
+#para10 {
+    background: linear-gradient(to right, rgba(255,255,255,0),rgba(255,255,255,1)),  
+    url("../images/ghosts.gif");
+}
+
+#para11 { 
+    background-color: #000;
+    background-image: repeating-linear-gradient(90deg, transparent, transparent 50px,      
+    rgba(255, 127, 0, 0.25) 50px, 
+    rgba(255, 127, 0, 0.25) 56px, 
+    transparent 56px, transparent 63px,      
+    rgba(255, 127, 0, 0.25) 63px, 
+    rgba(255, 127, 0, 0.25) 69px, 
+    transparent 69px, transparent 116px,      
+    rgba(255, 206, 0, 0.25) 116px, 
+    rgba(255, 206, 0, 0.25) 166px),
+
+    repeating-linear-gradient(0deg, 
+    transparent, transparent 50px, 
+    rgba(255, 127, 0, 0.25) 50px,      
+    rgba(255, 127, 0, 0.25) 56px, 
+    transparent 56px, transparent 63px, 
+    rgba(255, 127, 0, 0.25) 63px,      
+    rgba(255, 127, 0, 0.25) 69px, 
+    transparent 69px, transparent 116px, 
+    rgba(255, 206, 0, 0.25) 116px,
+    rgba(255, 206, 0, 0.25) 166px),
+
+    repeating-linear-gradient(-45deg, 
+    transparent, transparent 5px, 
+    rgba(143, 77, 63, 0.25) 5px,      
+    rgba(143, 77, 63, 0.25) 10px),
+
+    repeating-linear-gradient(45deg, 
+    transparent, transparent 5px, 
+    rgba(143, 77, 63, 0.25) 5px,      
+    rgba(143, 77, 63, 0.25) 10px);
+} 
+
+#para12 {
+    color: #555555;
+    background-color: #EEEEEE;                
+    text-shadow: 5px 5px 0px #eee, 7px 7px 0px #707070;
+} 
+
+#para13 { 
+    background-color: black;
+    color: white;
+    text-shadow:   0 0 10px #ffffff, 0 0 20px #ffffff, 0 0 30px #ffffff, 0 0 40px #ff00de,  
+    0 0 70px #ff00de,  0 0 80px #ff00de,  0 0 100px #ff00de,  0 0 150px #ff00de; 
+}

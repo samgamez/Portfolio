@@ -1,0 +1,39 @@
+body {
+    background: #0091cf; 
+}
+/* #region Header styles */
+header {
+    background: #01395e;
+    color: #ffaf00;
+}
+
+header h1 small {
+    text-shadow: goldenrod 2px 2px 3px;
+}
+/* #endregion */
+
+.container {
+    background: #ffffff;
+}
+
+.btn-primary,
+.btn-primary:hover {
+    background: #fd4445;
+    border-color: #fd4445
+}
+
+.playerLabel {
+    color: #01395e;
+    /* text-decoration: underline; */
+}
+
+.flip {
+    -moz-transform: scale(-1, 1);
+    -webkit-transform: scale(-1, 1);
+    -o-transform: scale(-1, 1);
+    transform: scale(-1, 1);
+}
+
+#imgDiv {
+    height: 200px;
+}

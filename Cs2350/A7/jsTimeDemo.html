@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Honor Code: I acknowledge that this code represents my own work: Sam Gamez -->
+    <meta charset="utf-8" />
+    <meta name="description" content="Demonstrate the use of JS to display time." />
+    <meta name="keywords" content="JavaScript, Date, Time" />
+    <meta name="author" content="Sam Gamez" />
+    <title>JavaScript Basics</title>
+    <script>
+        (function () {
+            /**
+             * Click event. Displays an alert to show the current date.
+             * This function is global so it will be visible to the HTML scope.
+             */
+            displayCurrentDate = function () {
+                var now = new Date();
+                var year = now.getFullYear();
+                var month = getMonthName(now.getMonth());
+                var day = getDayName(now.getDay());
+                var hours = now.getHours();
+                var timeString = getTime(now);
+
+                // Figure the greeting according to the current hour.
+                var greeting = "morning";
+
+                if (hours > 12) { // Any time after 12 PM denotes an afternoon greeting.
+                    greeting = "afternoon";
+                }
+                if (hours > 18) { // Any time after 6 PM denotes an evening greeting.
+                    greeting = "evening";
+                }
+
+                alert("Good " + greeting + ", it is " + timeString + " on " + day + ", " + month + " " + now.getDate() + ", " + year + ".");
+            }
+            /**
+             * Get's the time string to display.
+             */
+            function getTime(fullDate) {
+                var hours = fullDate.getHours();
+                var meridiem;
+
+                // Find the meridiem and hours in 12 hour format.
+                if (hours >= 12) {
+                    meridiem = "PM";
+                    if (hours > 12) {
+                        hours -= 12;
+                    }
+                }
+                else {
+                    meridiem = "AM";
+                }
+
+                return hours + ":" + fullDate.getMinutes() + " " + meridiem;
+            }
+
+            /**
+             * Parse's the weekday number to a name.
+             */
+            function getDayName(dayNumber) {
+                switch (dayNumber) {
+                    case 0:
+                        return "Sunday";
+                    case 1:
+                        return "Monday";
+                    case 2:
+                        return "Tuesday";
+                    case 3:
+                        return "Wednesday";
+                    case 4:
+                        return "Thursday";
+                    case 5:
+                        return "Friday";
+                    case 6:
+                        return "Saturday";
+                    default:
+                        return false;
+                }
+            }
+
+            /**
+             * Parse's the month number to a name.
+             */
+            function getMonthName(monthNumber) {
+                switch (monthNumber) {
+                    case 0:
+                        return "January";
+                    case 1:
+                        return "February";
+                    case 2:
+                        return "March";
+                    case 3:
+                        return "April";
+                    case 4:
+                        return "May";
+                    case 5:
+                        return "June";
+                    case 6:
+                        return "July";
+                    case 7:
+                        return "August";
+                    case 8:
+                        return "September";
+                    case 9:
+                        return "October";
+                    case 10:
+                        return "November";
+                    case 11:
+                        return "December";
+                    default:
+                        return false;
+                }
+            }
+
+        })()
+    </script>
+
+</head>
+
+<body>
+    <input type="button" value="Click here to display date" onclick="displayCurrentDate()">
+
+    <nav>
+        <a href="jsTimeDemo.html">Part I</a>
+        <a href="jsLoopDemo.html">Part II</a>
+        <a href="cashRegister.html">Part III</a>
+    </nav>
+</body>
+
+</html>

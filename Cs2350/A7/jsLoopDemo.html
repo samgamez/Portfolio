@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Honor Code: I acknowledge that this code represents my own work: Sam Gamez -->
+    <meta charset="utf-8" />
+    <meta name="description" content="Demonstrate the use of JS loops." />
+    <meta name="keywords" content="JavaScript, loops, numbers" />
+    <meta name="author" content="Sam Gamez" />
+    <title>JavaScript Basics</title>
+    <script>
+        
+        (function(){
+            /**
+             * Function that runs after the body has loaded.
+             */
+            readyFunction = function (){
+
+                // Prompt for a number. If the value entered isn't a number or if it is invalid, loop and prompt for the number again.
+                do {
+                    var input = Number(prompt("Enter a number: "));
+                    
+                } while (Number.isNaN(input) || !Number.isInteger(input) || input < 0 || !input)
+
+                var rowNumber = 1;
+                var table = document.getElementById("display-table");
+
+                // Add a number of rows equal to the input number.
+                while (rowNumber <= input) {
+                    var row = table.insertRow();
+                    var cell = row.insertCell();
+
+                    // Add offset class to every other row.
+                    if (rowNumber % 2 === 0){
+                        row.className += " offset";
+                    }
+                    
+                    // Label each row.
+                    cell.textContent = "Row " + rowNumber;
+                    rowNumber++;
+                }
+            }
+        })();
+    </script>
+    <style>
+        #display-table,
+        #display-table td {
+            border: 2px solid black;
+            border-collapse: collapse;
+        }
+        #display-table tr.offset {
+            background-color: #11aaff;
+        }
+    </style>
+</head>
+
+<body onload="readyFunction()">
+    <table id="display-table">
+
+    </table>
+
+    <nav>
+        <a href="jsTimeDemo.html">Part I</a>
+        <a href="jsLoopDemo.html">Part II</a>
+        <a href="cashRegister.html">Part III</a>
+    </nav>
+</body>
+
+</html>

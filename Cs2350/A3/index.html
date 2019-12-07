@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!--Honor Code: I acknowledge that this code represents my own work: Sam Gamez Date:  1/29/2018-->
+    <meta charset="utf-8" />
+    <meta name="description" content="Student weekly schedule and registration form." />
+    <meta name="keywords" content="Table, form, schedule, registration" />
+    <meta name="author" content="Sam Gamez" />
+    <title>Student Registration</title>
+    <link href="site.css" rel="stylesheet">
+</head>
+
+<body>
+    <h1>Class/Work Schedule</h1>
+    <table>
+        <thead>
+            <tr>
+                <th></th>
+                <th>Monday</th>
+                <th>Tuesday</th>
+                <th>Wednesday</th>
+                <th>Thursday</th>
+                <th>Friday</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th>8:00 A.M</th>
+                <td rowspan="9">Work</td>
+                <td rowspan="9">Work</td>
+                <td rowspan="9">Work</td>
+                <td rowspan="8">Work</td>
+                <td rowspan="9">Work</td>
+            </tr>
+            <tr>
+                <th>9:00 A.M</th>
+            </tr>
+            <tr>
+                <th>10:00 A.M</th>
+            </tr>
+            <tr>
+                <th>11:00 A.M</th>
+            </tr>
+            <tr>
+                <th>12:00 A.M</th>
+            </tr>
+            <tr>
+                <th>1:00 P.M</th>
+            </tr>
+            <tr>
+                <th>2:00 P.M</th>
+            </tr>
+            <tr>
+                <th>3:00 P.M</th>
+            </tr>
+            <tr>
+                <th>4:00 P.M</th>
+                <td>Dinner</td>
+            </tr>
+            <tr>
+                <th>5:00 P.M</th>
+                <td>Dinner</td>
+                <td rowspan="3">Class</td>
+                <td>Dinner</td>
+                <td rowspan="3">Class</td>
+                <td>Dinner</td>
+            </tr>
+            <tr>
+                <th>6:00 P.M</th>
+                <td>Kids Bedtime Routine</td>
+                <td>Kids Bedtime Routine</td>
+                <td>Kids Bedtime Routine</td>
+            </tr>
+            <tr>
+                <th>7:00 P.M</th>
+                <td rowspan="3">Homework</td>
+                <td rowspan="3">Homework</td>
+                <td rowspan="3">Homework</td>
+            </tr>
+            <tr>
+                <th>8:00 P.M</th>
+                <td>Dinner</td>
+                <td rowspan="2">Homework</td>
+            </tr>
+            <tr>
+                <th>9:00 P.M</th>
+                <td>Homework</td>
+            </tr>
+        </tbody>
+    </table>
+    <h1>Registration for WEB 2350</h1>
+    <form method="POST" action="http://www.tipjar.com/cgi-bin/test">
+        <fieldset>
+            <legend>Personal Details</legend>
+            <div class="row">
+                <div class="field-group">
+                    <label for="first">First Name</label>
+                    <input type="text" name="first" id="first" placeholder="First Name">
+                </div>
+                <div class="field-group">
+                    <label for="last">Last Name</label>
+                    <input type="text" name="last" id="last" placeholder="Last Name">
+                </div>
+                <div class="field-group">
+                    <label for="dob">Date of Birth</label>
+                    <input type="date" name="dob" id="dob">
+                </div>
+                <div class="field-group">
+                    <label for="email">Email</label>
+                    <input type="email" name="email" id="email" placeholder="example@domain.com">
+                </div>
+            </div>
+            <div class="row">
+                <div class="field-group">
+                    <label for="url">URL</label>
+                    <input type="url" name="url" id="url" placeholder="http://mysite.com">
+                </div>
+                <div class="field-group">
+                    <label for="phone">Phone number</label>
+                    <input type="tel" name="phone" id="phone" placeholder="Ex: 555-555-5555">
+                </div>
+                <div class="field-group">
+                    <label for="shoesize">Shoesize</label>
+                    <input type="number" name="shoesize" id="shoesize" placeholder="example@domain.com">
+                </div>
+            </div>
+
+        </fieldset>
+        <fieldset>
+            <legend>Billing Address</legend>
+            <div class="field-group">
+                <label for="address">Address</label>
+                <textarea id="address" name="address" rows="5" required></textarea>
+            </div>
+            <div class="field-group">
+                <label for="country">Country</label>
+                <select name="country" id="country">
+                    <option label="USA" value="USA"></option>
+                    <option label="Canada" value="Canada"></option>
+                    <option label="Mexico" value="Mexico"></option>
+                </select>
+            </div>
+        </fieldset>
+        <fieldset>
+            <legend>Card Details</legend>
+            <fieldset>
+                <legend>Card Type</legend>
+                <input type="radio" name="card" id="visa" value="Visa">
+                <label for="visa">Visa</label>
+                <input type="radio" name="card" id="mastercard" value="Mastercard">
+                <label for="mastercard">Mastercard</label>
+                <input type="radio" name="card" id="amex" value="AMEX">
+                <label for="amex">AMEX</label>
+            </fieldset>
+            <div class="field-group">
+                <label for="cc-name">Name</label>
+                <input type="text" name="cc-name" id="cc-name" placeholder="Name as it appears on card" required>
+            </div>
+            
+            <div class="field-group">
+                <label for="cc-number">Card Number</label>
+                <input type="text" name="cc-number" id="cc-number" required>
+            </div>
+            <div class="field-group">
+                <label for="code">Security Code</label>
+                <input type="password" name="code" id="code" required>
+            </div>
+            <div class="field-group">
+                <label for="expiry">Expiry Date</label>
+                <input type="date" name="expiry" id="expiry" required>
+            </div>
+            <div hidden>
+                <textarea name="feedback" id="feedback">
+                    This was a fun assignment. A lot of this is what I do at work as a programmer for the Davis
+                    School District. I think this was a good assignment for our class because it does give a small idea
+                    of what working with forms in a real work setting is like.
+                </textarea>
+            </div>
+        </fieldset>
+        <footer>
+            <div class="bordered">
+                <input type="submit" value="Submit Registration">
+                <input type="reset" value="Clear Registration">
+            </div>
+        </footer>
+    </form>
+    <a href="https://validator.w3.org/nu/?doc=https://icarus.cs.weber.edu/~sg04808/A3/index.html">
+            <img src="https://www.w3.org/html/logo/badge/html5-badge-h-solo.png" width="63" height="64" alt="HTML5 Powered" title="HTML5 Powered"/>
+        </a>
+</body>
+
+</html>
