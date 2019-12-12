@@ -1,0 +1,85 @@
+﻿@page "/"
+
+@using WeatherApiInterface.Data
+
+@* Inject weather forecast service. *@
+@inject WeatherForecastService ForecastService
+
+<h1>Weather forecast</h1>
+
+@* City entry form. *@
+<label>Enter a city:</label>
+<input @bind="@cityInput" />
+
+@* @onclick is a new blazor thing. The OnGoClick would show an error without it. *@
+<button type="button"
+        @onclick="@OnGoClick">
+    Go
+</button>
+
+<p style="font-size:11px;margin-left:95px;margin-top:-16px;"><br />(Format: City OR City, Country Code)</p>
+
+@* These if blocks validate the state. If the todaysForecast object is not null and the cityNotFound flag is false, display the weather info. *@
+@if (todaysForecast != null && !cityNotFound)
+{
+
+    <div style="margin-top:75px;margin-left:auto;margin-right:auto;font-size:18px;font-weight:bold;">
+        <h2>@todaysForecast.City</h2>
+        <div>
+            <img src="@todaysForecast.ImgUrl"
+                 alt="@todaysForecast.IconDescription"
+                 title="@todaysForecast.IconDescription" style="width:100px;height:auto;margin-left:40px;" />
+        </div>
+        <div>Temperature: @todaysForecast.Temp &#176;F</div>
+        <div>Humidity: @todaysForecast.Humidity%</div>
+        <div>Pressure: @todaysForecast.Pressure hPa</div>
+        <div>Wind Speed: @todaysForecast.WindSpeed mph</div>
+    </div>
+}
+else if (cityNotFound)
+{
+    <p>City not found</p>
+}
+else if (isSearching)
+{
+    <p>Getting weather for @cityInput</p>
+}
+
+@code {
+
+    // Local variables
+    WeatherForecastDto todaysForecast;
+
+    private string cityInput;
+
+    private bool cityNotFound = false;
+
+    private bool isSearching = false;
+
+    // Go button click function.
+    private async void OnGoClick()
+    {
+        // Turn on the searching flag.
+        isSearching = true;
+
+        // Reset local variables.
+        cityNotFound = false;
+        todaysForecast = null;
+
+        // Use try catch block to catch the 404 error that gets thrown if the city is not found.
+        try
+        {
+            // await is like sending an http request in JavaScript. It can call an asynchronous function on the server to retrieve some data.
+            todaysForecast = await ForecastService.GetForecastResult(cityInput);
+        }
+        catch
+        {
+            cityNotFound = true;
+        }
+
+        isSearching = false;
+
+        // Blazor doesn't update the UI when the state is changed so we need to call this manually.
+        StateHasChanged();
+    }
+}
